@@ -3,7 +3,7 @@ body{
      /* #74b9ff; */
      text-align: center;
      font-family: 'Open Sans', sans-serif;
-color: white;
+    color: white;
 
 }
 #header{
@@ -37,26 +37,35 @@ text-shadow: 2px 2px 4px #000000;
 .box{
     background-color: #68abff;
     margin: 10px;
-    display: grid;
+    display: flex;
     grid-template-columns:1fr 4fr 4fr;
-    height: 80px;
+    height: 90px;
     color: white;
     box-shadow: 1px 5px 5px 5px #888888;
     /* box-shadow: 5px 10px 8px 10px #888888; */
     -webkit-box-shadow: 3px -2px 13px -1px rgba(0,0,0,0.65);
--moz-box-shadow: 3px -2px 13px -1px rgba(0,0,0,0.65);
-box-shadow: 3px -2px 13px -1px rgba(0,0,0,0.65);
-border-radius: 4px;
+    -moz-box-shadow: 3px -2px 13px -1px rgba(0,0,0,0.65);
+    box-shadow: 3px -2px 13px -1px rgba(0,0,0,0.65);
+    border-radius: 4px;
 }
 
 #temperature{
     font-size: 30px;
+    margin: 10px;
 }
-
-#icon{
+.condition-box{
+    flex: 3;
+}
+.temperature-and-city-name{
+    flex:3;
+}
+.icon{
     margin: auto;
     font-size: 20px;
     cursor: pointer;
+    flex:1;
+    justify-content: center;
+    align-content: center;
 }
 
 #add-city-icon{
@@ -65,4 +74,8 @@ border-radius: 4px;
 
 #remove-city-icon{
     color: red;
+}
+
+#condition-pic{
+    height: 60px;
 }

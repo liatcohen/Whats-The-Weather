@@ -29,24 +29,25 @@
     <script id="city-template" type="text/x-handlebars-template">
         {{#each allCityData}}
             <div class="box">
-                <div id="icon">
+                <div class="icon">
                 {{#if isInDB}}
                 <div id="remove-city-icon"><i class="fas fa-minus-circle"></i></div>
                 {{else}}
                 <div id="add-city-icon"><i class="fas fa-plus-circle"></i></div>
                 {{/if}}
-            </div>
-                <div>
-                    <div id="temperature">{{temperature}}&deg</div>
+                </div>
+                <div class="temperature-and-city-name">
+                    <div id="temperature"><b>{{temperature}}&deg</b></div>
                     <div id="city-name">{{name}}</div>
                 </div>
-                <div>
-                    <div id="condition-pic"><img src={{conditionPic}}/></div>
+                <div class="condition-box">
+                    <div id="condition-pic"><img src="{{conditionPic}}"/></div>
                     <div id="condition">{{condition}}</div>
                 </div>       
             </div>
         {{/each}}
     </script>
+    
     <script src="./jquery/dist/jquery.js"></script>
     <script src="./handlebars/dist/handlebars.js"></script>
     <script src="Renderer.js"></script>
