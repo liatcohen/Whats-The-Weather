@@ -7,6 +7,7 @@ const Renderer = function () {
         const template = Handlebars.compile(source);
         let newHTML = template({allCityData});
         $('#container').append(newHTML);
+        $("#city-input").val("")
     }
 
     return {
