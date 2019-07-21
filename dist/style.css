@@ -1,15 +1,14 @@
 body{
     background-color:#54a0ff;
-     /* #74b9ff; */
-     text-align: center;
-     font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
     color: white;
 
 }
 #header{
-     font-family: 'Anton', sans-serif;
-font-size: 35px;
-text-shadow: 2px 2px 4px #000000;
+    font-family: 'Anton', sans-serif;
+    font-size: 35px;
+    text-shadow: 2px 2px 4px #000000;
 
 }
 #search-box{
