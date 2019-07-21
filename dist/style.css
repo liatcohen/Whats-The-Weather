@@ -22,14 +22,17 @@ text-shadow: 2px 2px 4px #000000;
     cursor: pointer;
 }
 #city-input{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
     width: 80%;
     background-color: transparent;
     padding: 12px 20px;
-    margin: 8px 0;
+    /* margin: 8px 0; */
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid white;
     color: white;
+    padding: 8px;
 }
 .box{
     background-color: #68abff;
@@ -53,12 +56,13 @@ border-radius: 4px;
 #icon{
     margin: auto;
     font-size: 20px;
+    cursor: pointer;
 }
 
-#add-icon{
+#add-city-icon{
     color: green;
 }
 
-#remove-icon{
+#remove-city-icon{
     color: red;
 }
