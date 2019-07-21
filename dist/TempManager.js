@@ -1,22 +1,13 @@
-let allCityData = [
-    {
-        "_id": "5d3035892d543a236f1777ed",
-        "name": "Jerusalem",
-        "temperature": 29,
-        "condition": "Sunny",
-        "conditionPic": "cdn.apixu.com/weather/64x64/day/113.png",
-        "__v": 0
-    }
-]
+let allCityData = []
 
-const getDataFromDB = function () {
-    $.get('/cities', function (cities) {
-        console.log(cities)
+const getDataFromDB = async function () {
+    await $.get('/cities', function (cities) {
+        allCityData=[...cities]
+        allCityData.forEach(c=> c.isInDB=true)
     });
 }
 
 const getCityData = async function (cityName) {
-    console.log("getCityData manager")
     await $.get('/city/' + cityName, function (cityInfo) {
         cityInfo.lastUpdated = 1
         allCityData.push(cityInfo)
@@ -24,7 +15,14 @@ const getCityData = async function (cityName) {
 }
 
 const saveCity = function (cityName) {
-    let city = allCityData.find(c => c.name == cityName)
+    let city=[]
+    // let city = allCityData.find(c => c.name == cityName)
+    allCityData.forEach(c=>
+        {if (c.name===cityName){
+            city=c
+            c.isInDB=true
+        }})
+
     $.post('/city', city, function (cityInfo) {
 
     });
@@ -35,10 +33,15 @@ const saveCity = function (cityName) {
 
 const removeCity = function (cityName) {
     $.ajax({
-        url: '/city' + $.param(cityName),
-        type: 'DELETE',
+        url: '/city/' + cityName,// $.param(cityName),
+        type: 'delete',
         success: function (result) {
             // Do something with the result
+            allCityData.forEach(c=>
+                {if (c.name===cityName){
+                    // city=c
+                    c.isInDB=false
+                }})
         }
     });
 }

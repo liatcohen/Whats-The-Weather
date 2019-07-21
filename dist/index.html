@@ -30,10 +30,10 @@
         {{#each allCityData}}
             <div class="box">
                 <div id="icon">
-                {{#if true}}
-                <div id="add-icon"><i class="fas fa-plus-circle"></i></div>
+                {{#if isInDB}}
+                <div id="remove-city-icon"><i class="fas fa-minus-circle"></i></div>
                 {{else}}
-                <div id="remove-icon"><i class="fas fa-minus-circle"></i></div>
+                <div id="add-city-icon"><i class="fas fa-plus-circle"></i></div>
                 {{/if}}
             </div>
                 <div>

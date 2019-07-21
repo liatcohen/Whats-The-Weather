@@ -32,18 +32,21 @@ router.get('/cities', function (req, res) {
 
 // This route should take some data from the body, and save it as a new City to your DB
 router.post('/city', function (req, res) {
+    console.log("api post")
+    console.log(req.body)
     let city= new City(req.body)
+    console.log(city)
     //add to DB:
     city.save()
-    res.send("not implemented yet")
+    res.end()
 })
 
 
 // This route should take a cityName parameter
 // This route should find the city's data in your DB and remove it from your DB
 router.delete('/city/:cityName', function (req, res) {
-    res.send("not implemented yet")
-
+    let cityName = req.params.cityName
+    City.findOneAndDelete({name: cityName}).then(res.end())
 })
 
 module.exports = router
